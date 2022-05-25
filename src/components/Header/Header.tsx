@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HeaderContainer, OpeningMenu, SearchContainer } from "./Header.styled";
+import { HeaderContainer, OpeningMenu } from "./Header.styled";
 import SearchSlide from "./SearchSlide";
 import { default as cartIcon } from "../../assets/images/cart-icon.svg";
 import { default as userIcon } from "../../assets/images/user-icon.svg";
