@@ -1,6 +1,6 @@
 import React from "react";
-import { WelcomeHero, SearchHero } from "../../components/Hero/Hero.styled";
-import { default as miniHero } from "../../assets/images/mobile-main-photo.png";
+import { WelcomeHero, SearchHero } from "./Hero.styled";
+import { default as miniHero } from "../../../assets/images/mobile-main-photo.png";
 
 const Hero = () => {
   return (
