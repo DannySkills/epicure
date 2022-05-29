@@ -13,7 +13,7 @@ export const SearchSlideContainer = styled.div`
   justify-content: center;
   font-size: 20px;
   z-index: 100;
-  font-family: HelveticaNeue;
+  font-family: "Helvetica Neue";
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   background-color: #fff;
   position: fixed;

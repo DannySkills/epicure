@@ -24,7 +24,11 @@ export const SearchHero = styled.div`
   align-items: center;
 
   h5 {
-    font-family: HelveticaNeue;
+    font-family: "Helvetica Neue";
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 32px;
+    margin-top: 10px;
     text-align: center;
   }
 

@@ -1,0 +1,71 @@
+import React, { useState } from "react";
+import { DishesCarouselContainer } from "./DishesCarousel.styled";
+import { dishesData } from "../../data/dishes";
+import { Dish } from "../../interfaces/dish";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import Slider from "react-slick";
+import { DishCard } from "./dishes/DishCard";
+
+const DishesCarousel = () => {
+  const [dishes, setDishes] = useState<Dish[]>(dishesData);
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 580,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 360,
+        settings: {
+          slidesToShow: 1.7,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 300,
+        settings: {
+          slidesToShow: 1.1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 220,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  if (!dishes.length) return <div>Loading...</div>;
+  return (
+    <DishesCarouselContainer>
+      <h5>SIGNATURE DISH OF:</h5>
+      <Slider className="slider" {...settings}>
+        {dishes.map((dish) => (
+          <DishCard key={dish._id} dish={dish} />
+        ))}
+      </Slider>
+    </DishesCarouselContainer>
+  );
+};
+
+export default DishesCarousel;
