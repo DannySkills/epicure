@@ -1,23 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { WeeklyChefContainer } from "./WeeklyChef.styled";
-import { chefData } from "../../data/chef";
 import ChefRestaurantCarousel from "./ChefRestaurantCarousel";
 import { Dish } from "../../interfaces/dish";
+import { useDispatch, useSelector } from "react-redux";
+import { RootStore } from "../../store/store";
+import { getChef } from "../../store/chef/chef.action";
+import MediaQuery from "react-responsive";
+import ChefRestaurantTable from "./ChefRestaurantTable";
 
 interface WeeklyChefProps {
   dishes: Dish[];
 }
 
 export const WeeklyChef: React.FC<WeeklyChefProps> = ({ dishes }) => {
+  const dispatch = useDispatch();
+  const chef = useSelector((state: RootStore) => state.chef.chef);
+  useEffect(() => {
+    dispatch(getChef());
+  }, []);
+
+  if (!chef) return <div>Loading...</div>;
   return (
     <WeeklyChefContainer>
       <h6>Chef of the week:</h6>
-      <figure>
-        <img src={require(`../../${chefData.image}`)} alt={chefData.name} />
-        <figcaption>{chefData.name}</figcaption>
-      </figure>
-      <p>{chefData.description}</p>
-      <ChefRestaurantCarousel dishes={dishes} />
+      <div className="chef-container">
+        <div>
+          <figure>
+            <img src={require(`../../${chef.image}`)} alt={chef.name} />
+            <figcaption>{chef.name}</figcaption>
+          </figure>
+        </div>
+        <div>
+          <p>{chef.description}</p>
+        </div>
+      </div>
+      <MediaQuery maxWidth={600}>
+        <ChefRestaurantCarousel dishes={dishes} />
+      </MediaQuery>
+      <MediaQuery minWidth={600}>
+        <ChefRestaurantTable dishes={dishes} />
+      </MediaQuery>
     </WeeklyChefContainer>
   );
 };

@@ -71,4 +71,12 @@ export const Card = styled.div`
       padding: 0 10px;
     }
   }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 850px) {
+    min-width: 260px;
+    img {
+      width: 100%;
+    }
+  }
 `;

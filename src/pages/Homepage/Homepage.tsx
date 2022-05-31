@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Restaurant from "../../interfaces/restaurant";
-import { Dish } from "../../interfaces/dish";
+import React, { useEffect } from "react";
 import { HomepageContainer } from "./Homepage.styled";
 import Hero from "../../components/homepage/hero/Hero";
 import RestaurantsCarousel from "../../components/homepage/RestaurantsCarousel";
@@ -9,9 +7,11 @@ import DishLabels from "../../components/homepage/dishes/DishLabels";
 import { WeeklyChef } from "../../components/homepage/WeeklyChef";
 import About from "../../components/homepage/About";
 import { useDispatch, useSelector } from "react-redux";
-import { getRestaurantsData } from "../../store/restaurant/restaurantAction";
+import { getRestaurantsAndDishes } from "../../store/restaurant/restaurant.action";
 import { RootStore } from "../../store/store";
-import { restaurantService } from "../../services/restaurant.service";
+import MediaQuery from "react-responsive";
+import RestaurantsTable from "../../components/homepage/RestaurantsTable";
+import DishesTable from "../../components/homepage/DishesTable";
 
 const Homepage = () => {
   const restaurants = useSelector(
@@ -21,7 +21,7 @@ const Homepage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getRestaurantsData());
+    dispatch(getRestaurantsAndDishes());
   }, []);
 
   const renderContent = () => {
@@ -31,8 +31,14 @@ const Homepage = () => {
       return (
         <>
           <Hero />
-          <RestaurantsCarousel restaurants={restaurants} />
-          <DishesCarousel dishes={dishes} />
+          <MediaQuery maxWidth={600}>
+            <RestaurantsCarousel restaurants={restaurants} />
+            <DishesCarousel dishes={dishes} />
+          </MediaQuery>
+          <MediaQuery minWidth={600}>
+            <RestaurantsTable restaurants={restaurants} />
+            <DishesTable dishes={dishes} />
+          </MediaQuery>
           <DishLabels />
           <WeeklyChef dishes={dishes} />
           <About />

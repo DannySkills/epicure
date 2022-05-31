@@ -24,7 +24,7 @@ const RestaurantsCarrousel: React.FC<RestaurantsCarouselProps> = ({
       {
         breakpoint: 580,
         settings: {
-          slidesToShow: 2.5,
+          slidesToShow: 3,
           slidesToScroll: 2,
           initialSlide: 1,
         },
@@ -32,7 +32,7 @@ const RestaurantsCarrousel: React.FC<RestaurantsCarouselProps> = ({
       {
         breakpoint: 460,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },

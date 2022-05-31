@@ -8,7 +8,7 @@ import {
   DISHES_FAIL,
   DISHES_LOADING,
   DISHES_SUCCESS,
-} from "./type";
+} from "./dish.action.types";
 
 // export const getDishes = (): ThunkAction<
 //   void,

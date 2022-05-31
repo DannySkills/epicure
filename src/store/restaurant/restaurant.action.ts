@@ -1,24 +1,21 @@
-import { restaurantService } from "../../services/restaurant.service";
-import { AnyAction, Dispatch } from "redux";
+import RestaurantService from "../../services/restaurant.service";
+import { Dispatch } from "redux";
 import {
   RestaurantDispatchTypes,
   RESTAURANTS_FAIL,
   RESTAURANTS_LOADING,
   RESTAURANTS_SUCCESS,
-} from "./type";
-import Restaurant from "../../interfaces/restaurant";
-import { DishesDispatchTypes, DISHES_SUCCESS } from "../dish/type";
-import { ThunkAction } from "redux-thunk";
-import { RootStore } from "../store";
+} from "./restaurant.action.types";
+import { DishesDispatchTypes, DISHES_SUCCESS } from "../dish/dish.action.types";
 
-export const getRestaurantsData = (): any => {
+export const getRestaurantsAndDishes = (): any => {
   return async (
     dispatch: Dispatch<RestaurantDispatchTypes | DishesDispatchTypes>
   ) => {
     try {
       dispatch({ type: RESTAURANTS_LOADING });
       const [restaurants, dishes] =
-        await restaurantService.getRestaurantsAndDishes();
+        await RestaurantService.getRestaurantsAndDishesData();
       dispatch({ type: RESTAURANTS_SUCCESS, payload: restaurants });
       dispatch({ type: DISHES_SUCCESS, payload: dishes });
     } catch (error) {

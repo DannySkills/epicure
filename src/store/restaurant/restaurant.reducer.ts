@@ -1,5 +1,5 @@
 import Restaurant from "../../interfaces/restaurant";
-import * as ActionTypes from "./type";
+import * as ActionTypes from "./restaurant.action.types";
 
 interface initialStateI {
   loading: boolean;

@@ -2,7 +2,7 @@ import { restaurantsData } from "../data/restaurants";
 import DishService from "./dish.service";
 import Restaurant from "../interfaces/restaurant";
 
-const fetchRestaurants = () => {
+const _fetchRestaurants = () => {
   return new Promise<Restaurant[]>((resolve, reject) => {
     setTimeout(() => {
       resolve(restaurantsData);
@@ -10,11 +10,12 @@ const fetchRestaurants = () => {
   });
 };
 
-const getRestaurantsAndDishes = () => {
-  return Promise.all([fetchRestaurants(), DishService.fetchDishes()]);
+const getRestaurantsAndDishesData = () => {
+  return Promise.all([_fetchRestaurants(), DishService.fetchDishes()]);
 };
 
-export const restaurantService = {
-  fetchRestaurants,
-  getRestaurantsAndDishes,
+const RestaurantService = {
+  getRestaurantsAndDishesData,
 };
+
+export default RestaurantService;

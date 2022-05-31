@@ -4,11 +4,11 @@ import {
   DISHES_FAIL,
   DISHES_LOADING,
   DISHES_SUCCESS,
-} from "./type";
+} from "./dish.action.types";
 
 interface initialStateI {
   loading: boolean;
-  dishes?: Dish[] | null;
+  dishes?: Dish[] | [];
 }
 
 const initialState: initialStateI = {

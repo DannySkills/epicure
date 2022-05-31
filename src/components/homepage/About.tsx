@@ -1,6 +1,6 @@
 import React from "react";
 import { AboutContainer } from "./About.styled";
-import { default as logo } from "../../assets/images/epicure-logo.svg";
+import { default as logo } from "../../assets/images/epicure-icon.png";
 import { default as apple } from "../../assets/images/apple-icon.png";
 import { default as google } from "../../assets/images/google-icon.png";
 
@@ -10,7 +10,7 @@ const About = () => {
       <div>
         <img className="logo" src={logo} alt="Epicure logo" />
       </div>
-      <div>
+      <div className="about-container">
         <div className="download">
           <div className="button">
             <img src={google} alt="google logo" />

@@ -47,13 +47,25 @@ export const SearchHero = styled.div`
       border: none;
       background-color: transparent;
       width: 253px;
-      height: 15px;
+      height: 100%;
       padding: 5px 5px 10px;
+
+      &:focus {
+        outline: none;
+      }
     }
     img {
       margin: 15px;
       width: 20px;
       height: 20px;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    width: 650px;
+
+    p {
+      width: 30ch;
     }
   }
 `;
