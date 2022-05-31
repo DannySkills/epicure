@@ -24,9 +24,16 @@ export const Card = styled.div`
     font-family: "Helvetica Neue";
     font-style: normal;
     font-weight: 200;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 24px;
     letter-spacing: 1.2px;
     padding: 0 10px;
+  }
+
+  @media only screen and (min-width: 850px) {
+    min-width: 260px;
+    img {
+      width: 100%;
+    }
   }
 `;

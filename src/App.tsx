@@ -3,6 +3,7 @@ import GlobalStyle from "./Global.styled";
 import Header from "./components/header/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
+import Footer from "./components/footer/Footer";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           ))}
         </Routes>
       </BrowserRouter>
+      <Footer />
     </>
   );
 };

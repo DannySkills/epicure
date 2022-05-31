@@ -1,18 +1,20 @@
 import React from "react";
 import { WelcomeHero, SearchHero } from "./Hero.styled";
 import { default as miniHero } from "../../../assets/images/mobile-main-photo.png";
+import { default as search } from "../../../assets/images/search-icon.svg";
 
 const Hero = () => {
   return (
     <WelcomeHero hero={miniHero}>
       <SearchHero>
-        <h5>Epicure works with the top chefs restaurants in Tel-Aviv</h5>
-        <form>
+        <p>Epicure works with the top chefs restaurants in Tel-Aviv</p>
+        <div>
+          <img src={search} alt="search" />
           <input
             type="text"
-            placeholder="Search for restaurant cuisine, chef"
+            placeholder="Search for restaurants cuisine, chef"
           />
-        </form>
+        </div>
       </SearchHero>
     </WelcomeHero>
   );

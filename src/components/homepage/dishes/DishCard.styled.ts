@@ -50,4 +50,33 @@ export const Card = styled.div`
       }
     }
   }
+  .weekly-chef {
+    width: 100%;
+    height: 100%;
+    min-width: 150px;
+    max-width: 200px;
+    background: #f9f4ea;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 20px;
+
+    h2 {
+      font-family: "Helvetica Neue";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 21px;
+      letter-spacing: 2.67px;
+      padding: 0 10px;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 850px) {
+    min-width: 260px;
+    img {
+      width: 100%;
+    }
+  }
 `;

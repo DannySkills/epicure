@@ -1,17 +1,18 @@
-import React from "react";
-import { DishesCarouselContainer } from "./DishesCarousel.styled";
-import { Dish } from "../../interfaces/dish";
-import "slick-carousel/slick/slick-theme.css";
+import React, { useState } from "react";
 import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { Carousel } from "./RestaurantsCarousel.styled";
 import { DishCard } from "./dishes/DishCard";
+import { Dish } from "../../interfaces/dish";
 import { default as arrow } from "../../assets/images/arrow.svg";
 
-interface DishesCarouselProps {
+interface ChefCarouselProps {
   dishes: Dish[];
 }
 
-const DishesCarousel: React.FC<DishesCarouselProps> = ({ dishes }) => {
+const ChefRestaurantCarousel: React.FC<ChefCarouselProps> = ({ dishes }) => {
+  const [isChef, setIsChef] = useState(true);
   const settings = {
     dots: false,
     infinite: true,
@@ -22,7 +23,7 @@ const DishesCarousel: React.FC<DishesCarouselProps> = ({ dishes }) => {
       {
         breakpoint: 580,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 1,
         },
@@ -30,7 +31,7 @@ const DishesCarousel: React.FC<DishesCarouselProps> = ({ dishes }) => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -42,14 +43,14 @@ const DishesCarousel: React.FC<DishesCarouselProps> = ({ dishes }) => {
         },
       },
       {
-        breakpoint: 300,
+        breakpoint: 280,
         settings: {
-          slidesToShow: 1.1,
+          slidesToShow: 1.2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 220,
+        breakpoint: 200,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -57,22 +58,20 @@ const DishesCarousel: React.FC<DishesCarouselProps> = ({ dishes }) => {
       },
     ],
   };
-
-  if (!dishes.length) return <div>Loading...</div>;
   return (
-    <DishesCarouselContainer>
-      <h5>SIGNATURE DISH OF:</h5>
-      <Slider className="slider" {...settings}>
-        {dishes.map((dish) => (
-          <DishCard key={dish._id} dish={dish} />
-        ))}
+    <Carousel>
+      <h3>Chef of the week:</h3>
+      <Slider {...settings}>
+        {dishes.map((dish) => {
+          return <DishCard isChef={isChef} dish={dish} key={dish._id} />;
+        })}
       </Slider>
       <div className="rest-nav">
         <a href="#">All Restaurants</a>
         <img src={arrow} alt="" />
       </div>
-    </DishesCarouselContainer>
+    </Carousel>
   );
 };
 
-export default DishesCarousel;
+export default ChefRestaurantCarousel;

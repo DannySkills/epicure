@@ -70,7 +70,7 @@ export const dishesData: Dish[] = [
     name: "Red Farm",
     restaurant: "Popina",
     ingredients: "Tofu, Spekkoek Peanuts, Spicy Manis, Pear Yakitori",
-    image: "assets/images/dishes/RedFarm.png",
+    image: "assets/images/dishes/redfarm.png",
     icon: "assets/images/vegan-icon.svg",
     price: 98,
     chef: "Ran Shmueli",
@@ -81,7 +81,7 @@ export const dishesData: Dish[] = [
     restaurant: "Popina",
     ingredients:
       "Green Papaya, Mango, Chukka, Chili, Mint, Kaffir, Lime, Cashew, Akaya, Cham",
-    image: "assets/images/dishes/ta-Ma-La-Ko.png",
+    image: "assets/images/dishes/ta-ma-la-ko.png",
     icon: "assets/images/spicy-icon.svg",
     price: 98,
     chef: "Aviv Moshe",
