@@ -23,7 +23,26 @@ const Header = () => {
   return (
     <>
       <HeaderContainer>
-        <div>
+        <div className="main-nav">
+          <ul className="clean-list">
+            <li className="home">
+              <a className="clean-link" href="#">
+                Epicure
+              </a>
+            </li>
+            <li>
+              <a className="clean-link" href="#">
+                Restaurants
+              </a>
+            </li>
+            <li>
+              <a className="clean-link" href="#">
+                Chefs
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="hamburger">
           <img
             src={hamburger}
             className="nav-icon"
@@ -50,16 +69,11 @@ const Header = () => {
           <div>
             <img src={x} onClick={toggleMenu} className="nav-icon" />
           </div>
+          <a onClick={() => toggleMenu()}>Restaurants</a>
           <a onClick={() => toggleMenu()}>Chefs</a>
-          <a onClick={() => toggleMenu()}>All Restaurants</a>
           <div>
-            {" "}
             <a onClick={() => toggleMenu()}>Contact Us</a>
-          </div>
-          <div>
             <a onClick={() => toggleMenu()}>Terms of Use</a>
-          </div>
-          <div>
             <a onClick={() => toggleMenu()}>Privacy Policy</a>
           </div>
         </OpeningMenu>

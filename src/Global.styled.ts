@@ -10,4 +10,13 @@ export default createGlobalStyle`
     body {
         background-color: #E5E5E5;
     }
+
+    .clean-list {
+        list-style: none;
+    }
+
+    .clean-link {
+        text-decoration: none;
+        color: inherit;
+    }
 `;

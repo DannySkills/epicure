@@ -8,6 +8,13 @@ export const LabelsWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 60px;
+  div {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
   @media only screen and (max-width: 480px) {
     gap: 40px;
   }
@@ -17,12 +24,8 @@ export const LabelsWrapper = styled.div`
   @media only screen and (max-width: 280px) {
     gap: 10px;
   }
-  div {
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  @media only screen and (min-width: 600px) {
+    flex-direction: row;
   }
 `;
 
@@ -39,5 +42,16 @@ export const Overlay = styled.div`
     text-align: center;
     letter-spacing: 1.25px;
     text-transform: uppercase;
+    padding: 20px 0;
+  }
+  p {
+    padding: 20px 0;
+    font-family: "Helvetica Neue";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 1.97px;
   }
 `;

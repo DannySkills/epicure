@@ -27,6 +27,48 @@ export const HeaderContainer = styled.header`
       }
     }
   }
+  .main-nav {
+    display: none;
+  }
+  @media only screen and (min-width: 600px) {
+    .hamburger {
+      display: none;
+    }
+    div.logo {
+      left: 20px;
+    }
+    .main-nav {
+      display: flex;
+      padding: 0 45px;
+
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .home {
+          font-family: "Helvetica Neue";
+          font-style: normal;
+          font-weight: 200;
+          font-size: 27px;
+          letter-spacing: 1.35px;
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        li {
+          font-family: "Helvetica Neue";
+          font-style: normal;
+          font-weight: 200;
+          font-size: 16px;
+          letter-spacing: 1.7px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+  }
 `;
 
 export const SearchContainer = styled.div`
@@ -41,19 +83,19 @@ export const OpeningMenu = styled.div`
   left: ${(props: { menu: boolean }) => (props.menu ? "0%" : "-100%;")};
   height: 367px;
   width: 100%;
-  padding: 3% 10% 50%;
+  padding: 0 35px;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   font-size: 20px;
   position: fixed;
   background: #fff;
   z-index: 100;
   font-family: "Helvetica Neue";
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  font-size: 18px;
   & a {
     text-decoration: none;
     cursor: pointer;
+    padding-bottom: 20px;
   }
   & hr {
     width: 53%;
@@ -61,16 +103,17 @@ export const OpeningMenu = styled.div`
   & div {
     display: flex;
     flex-direction: column;
-    align-items: start;
     opacity: 0.3;
-    & hr {
-      width: 100vw;
-    }
+    padding-bottom: 80px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
     & img {
       position: absolute;
       top: 0;
       left: 0;
       margin: 3% 8%;
     }
+  }
+  @media only screen and (min-width: 600px) {
+    display: none;
   }
 `;

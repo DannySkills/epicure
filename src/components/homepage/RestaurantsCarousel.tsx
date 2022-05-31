@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Carousel } from "./RestaurantsCarousel.styled";
-import { restaurantsData } from "../../data/restaurants";
 import Restaurant from "../../interfaces/restaurant";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { RestaurantCard } from "../restaurants/RestaurantCard";
-import { NavLink } from "react-router-dom";
+import { default as arrow } from "../../assets/images/arrow.svg";
 
 interface RestaurantsCarouselProps {
-  restaurants: Restaurant[];
+  restaurants: Restaurant[] | null;
 }
 
 const RestaurantsCarrousel: React.FC<RestaurantsCarouselProps> = ({
@@ -55,6 +54,7 @@ const RestaurantsCarrousel: React.FC<RestaurantsCarouselProps> = ({
     ],
   };
 
+  if (!restaurants) return <div>Loading...</div>;
   return (
     <>
       <Carousel>
@@ -64,6 +64,10 @@ const RestaurantsCarrousel: React.FC<RestaurantsCarouselProps> = ({
             <RestaurantCard key={restaurant._id} restaurant={restaurant} />
           ))}
         </Slider>
+        <div className="rest-nav">
+          <a href="#">All Restaurants</a>
+          <img src={arrow} alt="" />
+        </div>
       </Carousel>
     </>
   );
