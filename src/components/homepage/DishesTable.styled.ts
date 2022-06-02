@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const TableContainer = styled.div`
   margin: auto;
-  padding: 40px 0 50px;
   display: flex;
   flex: 0;
   align-items: center;
@@ -12,6 +11,7 @@ export const TableContainer = styled.div`
     display: flex;
     flex: 0;
     justify-content: center;
+    flex-direction: column;
   }
   h6 {
     font-family: "Helvetica Neue";
@@ -22,5 +22,31 @@ export const TableContainer = styled.div`
     padding-left: 20px;
     letter-spacing: 1.25px;
     text-transform: uppercase;
+  }
+  .rest-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+    gap: 12px;
+    a {
+      font-family: "Helvetica Neue";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 35px;
+      letter-spacing: 2px;
+      text-transform: capitalize;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .dishes {
+      flex-direction: row;
+    }
   }
 `;

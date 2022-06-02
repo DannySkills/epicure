@@ -1,29 +1,27 @@
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { HomepageContainer } from "./Homepage.styled";
+import MediaQuery from "react-responsive";
 import Hero from "../../components/homepage/hero/Hero";
 import RestaurantsCarousel from "../../components/homepage/RestaurantsCarousel";
 import DishesCarousel from "../../components/homepage/DishesCarousel";
+import RestaurantsTable from "../../components/homepage/RestaurantsTable";
+import DishesTable from "../../components/homepage/DishesTable";
 import DishLabels from "../../components/homepage/dishes/DishLabels";
 import { WeeklyChef } from "../../components/homepage/WeeklyChef";
 import About from "../../components/homepage/About";
-import { useDispatch, useSelector } from "react-redux";
 import { getRestaurantsAndDishes } from "../../store/restaurant/restaurant.action";
 import { RootStore } from "../../store/store";
-import MediaQuery from "react-responsive";
-import RestaurantsTable from "../../components/homepage/RestaurantsTable";
-import DishesTable from "../../components/homepage/DishesTable";
 
-const Homepage = () => {
+const Homepage: React.FC = () => {
   const restaurants = useSelector(
     (state: RootStore) => state.restaurants.restaurants
   );
   const dishes = useSelector((state: RootStore) => state.dishes.dishes);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getRestaurantsAndDishes());
   }, []);
-
   const renderContent = () => {
     if (!restaurants || !dishes) {
       return <div>Loading...</div>;
@@ -45,6 +43,7 @@ const Homepage = () => {
         </>
       );
   };
+
   return <HomepageContainer>{renderContent()}</HomepageContainer>;
 };
 

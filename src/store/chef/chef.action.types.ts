@@ -17,4 +17,27 @@ export interface ChefSuccess {
   payload: Chef;
 }
 
-export type ChefDispatchTypes = ChefLoading | ChefFail | ChefSuccess;
+export const CHEFS_LOADING = "CHEFS_LOADING";
+export const CHEFS_FAIL = "CHEFS_FAIL";
+export const CHEFS_SUCCESS = "CHEFS_SUCCESS";
+
+export interface ChefsLoading {
+  type: typeof CHEFS_LOADING;
+}
+
+export interface ChefsFail {
+  type: typeof CHEFS_FAIL;
+}
+
+export interface ChefsSuccess {
+  type: typeof CHEFS_SUCCESS;
+  payload: Chef[];
+}
+
+export type ChefDispatchTypes =
+  | ChefLoading
+  | ChefFail
+  | ChefSuccess
+  | ChefsLoading
+  | ChefsFail
+  | ChefsSuccess;

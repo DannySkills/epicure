@@ -7,6 +7,7 @@ import { default as logo } from "../../assets/images/epicure-logo.svg";
 import { default as search } from "../../assets/images/search-icon.svg";
 import { default as hamburger } from "../../assets/images/opening-menu-icon.svg";
 import { default as x } from "../../assets/images/x.svg";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -26,19 +27,19 @@ const Header = () => {
         <div className="main-nav">
           <ul className="clean-list">
             <li className="home">
-              <a className="clean-link" href="#">
+              <NavLink to="/" className="clean-link">
                 Epicure
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a className="clean-link" href="#">
+              <NavLink to="/restaurants" className="clean-link">
                 Restaurants
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a className="clean-link" href="#">
+              <NavLink className="clean-link" to="/chefs">
                 Chefs
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -51,7 +52,9 @@ const Header = () => {
           />
         </div>
         <div className="logo">
-          <img src={logo} alt="mini logo" />
+          <NavLink className="clean-link" to="/">
+            <img src={logo} alt="mini logo" />
+          </NavLink>
         </div>
         <div>
           <img
@@ -69,12 +72,20 @@ const Header = () => {
           <div>
             <img src={x} onClick={toggleMenu} className="nav-icon" />
           </div>
-          <a onClick={() => toggleMenu()}>Restaurants</a>
-          <a onClick={() => toggleMenu()}>Chefs</a>
+          <NavLink
+            to="/restaurants"
+            className="clean-link"
+            onClick={toggleMenu}
+          >
+            Restaurants
+          </NavLink>
+          <NavLink to="/chefs" className="clean-link" onClick={toggleMenu}>
+            Chefs
+          </NavLink>
           <div>
-            <a onClick={() => toggleMenu()}>Contact Us</a>
-            <a onClick={() => toggleMenu()}>Terms of Use</a>
-            <a onClick={() => toggleMenu()}>Privacy Policy</a>
+            <a onClick={toggleMenu}>Contact Us</a>
+            <a onClick={toggleMenu}>Terms of Use</a>
+            <a onClick={toggleMenu}>Privacy Policy</a>
           </div>
         </OpeningMenu>
       )}
