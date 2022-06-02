@@ -9,8 +9,8 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           {routes.map((route) => (
             <Route

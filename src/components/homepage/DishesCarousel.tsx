@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 import { DishCard } from "./dishes/DishCard";
 import { default as arrow } from "../../assets/images/arrow.svg";
+import { NavLink } from "react-router-dom";
 
 interface DishesCarouselProps {
   dishes: Dish[];
@@ -22,7 +23,7 @@ const DishesCarousel: React.FC<DishesCarouselProps> = ({ dishes }) => {
       {
         breakpoint: 580,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 1,
         },
@@ -30,7 +31,7 @@ const DishesCarousel: React.FC<DishesCarouselProps> = ({ dishes }) => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -68,7 +69,7 @@ const DishesCarousel: React.FC<DishesCarouselProps> = ({ dishes }) => {
         ))}
       </Slider>
       <div className="rest-nav">
-        <a href="#">All Restaurants</a>
+        <NavLink to="/restaurants">All Restaurants</NavLink>
         <img src={arrow} alt="" />
       </div>
     </DishesCarouselContainer>

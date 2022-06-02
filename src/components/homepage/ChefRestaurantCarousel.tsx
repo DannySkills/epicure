@@ -6,6 +6,7 @@ import { Carousel } from "./RestaurantsCarousel.styled";
 import { DishCard } from "./dishes/DishCard";
 import { Dish } from "../../interfaces/dish";
 import { default as arrow } from "../../assets/images/arrow.svg";
+import { NavLink } from "react-router-dom";
 
 interface ChefCarouselProps {
   dishes: Dish[];
@@ -67,7 +68,7 @@ const ChefRestaurantCarousel: React.FC<ChefCarouselProps> = ({ dishes }) => {
         })}
       </Slider>
       <div className="rest-nav">
-        <a href="#">All Restaurants</a>
+        <NavLink to="/restaurants">All Restaurants</NavLink>
         <img src={arrow} alt="" />
       </div>
     </Carousel>

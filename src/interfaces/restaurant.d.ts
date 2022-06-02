@@ -10,6 +10,7 @@ interface Restaurant {
   reviews: string[];
   latitude: string;
   longitude: string;
+  stars: number;
 }
 
 export default Restaurant;

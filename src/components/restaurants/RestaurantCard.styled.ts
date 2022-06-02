@@ -10,7 +10,9 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-
+  img {
+    width: 100%;
+  }
   h2 {
     font-family: "Helvetica Neue";
     font-style: normal;
@@ -29,7 +31,26 @@ export const Card = styled.div`
     letter-spacing: 1.2px;
     padding: 0 10px;
   }
+  .stars {
+    display: none;
+  }
+  @media only screen and (min-width: 600px) {
+    h2,
+    h3 {
+      text-align: center;
+    }
+    .stars {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
 
+      img {
+        width: 25px;
+      }
+    }
+  }
   @media only screen and (min-width: 850px) {
     min-width: 260px;
     img {

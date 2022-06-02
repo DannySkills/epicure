@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const AboutContainer = styled.div`
   width: 100%;
+  max-width: 900px;
   padding: 10px 20px;
   z-index: 2;
   background-color: #fafafa;
@@ -64,6 +65,7 @@ export const AboutContainer = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
+    /* max-width: 900px; */
     padding: 20px;
     flex-direction: row-reverse;
     align-items: center;
@@ -92,4 +94,12 @@ export const AboutContainer = styled.div`
       }
     }
   }
+`;
+
+export const Container = styled.div`
+  width: 100%;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

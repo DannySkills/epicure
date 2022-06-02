@@ -1,4 +1,4 @@
-import { chefData } from "../data/chef";
+import { chefData, chefsData } from "../data/chef";
 import { Chef } from "../interfaces/chef";
 
 const getChefData = () => {
@@ -9,8 +9,17 @@ const getChefData = () => {
   });
 };
 
+const getAllChefs = () => {
+  return new Promise<Chef[]>((resolve) => {
+    setTimeout(() => {
+      resolve(chefsData);
+    }, 2000);
+  });
+};
+
 const ChefService = {
   getChefData,
+  getAllChefs,
 };
 
 export default ChefService;

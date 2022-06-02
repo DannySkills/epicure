@@ -19,4 +19,24 @@ export const TableContainer = styled.div`
   .restaurants {
     display: flex;
   }
+  .rest-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+    gap: 12px;
+    a {
+      font-family: "Helvetica Neue";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 35px;
+      letter-spacing: 2px;
+      text-transform: capitalize;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
 `;

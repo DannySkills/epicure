@@ -20,6 +20,7 @@ export const WeeklyChefContainer = styled.div`
     flex-direction: column;
     align-items: center;
     row-gap: 20px;
+    padding: 0 20px;
     figure {
       img {
         width: 90vw;

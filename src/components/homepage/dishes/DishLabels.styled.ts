@@ -33,6 +33,7 @@ export const Overlay = styled.div`
   width: 100%;
   background-color: #fafafa;
   padding: 0 20px;
+  margin-top: 50px;
   h6 {
     font-family: "Helvetica Neue";
     font-style: normal;
