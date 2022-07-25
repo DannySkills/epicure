@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const WelcomeHero = styled.div`
   width: 100%;
@@ -25,11 +25,11 @@ export const SearchHero = styled.div`
   background-color: rgba(255, 255, 255, 0.88);
 
   p {
-    font-family: "Helvetica Neue";
+    font-family: 'Helvetica Neue';
     font-weight: 200;
     font-size: 20px;
     line-height: 32px;
-    margin-top: 16px 10px 64px;
+    margin-top: 10px;
     text-align: center;
   }
 
@@ -48,7 +48,6 @@ export const SearchHero = styled.div`
       background-color: transparent;
       width: 253px;
       height: 100%;
-      padding: 5px 5px 10px;
 
       &:focus {
         outline: none;

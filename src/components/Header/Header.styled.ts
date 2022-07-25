@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -47,7 +47,7 @@ export const HeaderContainer = styled.header`
         gap: 20px;
 
         .home {
-          font-family: "Helvetica Neue";
+          font-family: 'Helvetica Neue';
           font-style: normal;
           font-weight: 200;
           font-size: 27px;
@@ -57,7 +57,7 @@ export const HeaderContainer = styled.header`
         }
 
         li {
-          font-family: "Helvetica Neue";
+          font-family: 'Helvetica Neue';
           font-style: normal;
           font-weight: 200;
           font-size: 16px;
@@ -80,7 +80,7 @@ export const OpeningMenu = styled.div`
   display: flex;
   top: 0;
   transition: left 0.2s;
-  left: ${(props: { menu: boolean }) => (props.menu ? "0%" : "-100%;")};
+  left: ${(props: { menu: boolean }) => (props.menu ? '0%' : '-100%;')};
   height: 367px;
   width: 100%;
   padding: 0 35px;
@@ -89,7 +89,7 @@ export const OpeningMenu = styled.div`
   position: fixed;
   background: #fff;
   z-index: 100;
-  font-family: "Helvetica Neue";
+  font-family: 'Helvetica Neue';
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   font-size: 18px;
   & a {
@@ -103,15 +103,17 @@ export const OpeningMenu = styled.div`
   & div {
     display: flex;
     flex-direction: column;
-    opacity: 0.3;
+    opacity: 1;
     padding-bottom: 80px;
     border-top: 1px solid rgba(0, 0, 0, 0.15);
     & img {
       position: absolute;
-      top: 0;
-      left: 0;
-      margin: 3% 8%;
+      top: 6%;
+      left: 6%;
     }
+  }
+  .menu-bottom {
+    padding-top: 40px;
   }
   @media only screen and (min-width: 600px) {
     display: none;

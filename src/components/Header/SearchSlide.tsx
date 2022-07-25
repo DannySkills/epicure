@@ -1,6 +1,7 @@
-import React from "react";
-import { SearchSlideContainer } from "./SearchSlide.styled";
-import { default as x } from "../../assets/images/x.svg";
+import React from 'react';
+import { SearchSlideContainer } from './SearchSlide.styled';
+import { default as x } from '../../assets/images/x.svg';
+import { default as search } from '../../assets/images/search-icon.svg';
 
 interface SearchSlideProps {
   isSearch: boolean;
@@ -15,9 +16,10 @@ const SearchSlide: React.FC<SearchSlideProps> = ({
     <SearchSlideContainer search={isSearch}>
       <img src={x} onClick={toggleSearch} className="nav-icon" />
       <h1>Search</h1>
-      <form>
+      <div>
+        <img src={search} className="search-icon" />
         <input type="text" placeholder="Search for restaurant cuisine, chef" />
-      </form>
+      </div>
     </SearchSlideContainer>
   );
 };

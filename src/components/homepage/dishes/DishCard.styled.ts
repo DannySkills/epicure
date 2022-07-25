@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Card = styled.div`
   margin: 5px;
@@ -10,6 +10,9 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  img {
+    width: 100%;
+  }
   .dish-details {
     min-height: 320px;
     max-height: 320px;
@@ -22,7 +25,7 @@ export const Card = styled.div`
     justify-content: space-between;
     gap: 10px;
     h1 {
-      font-family: "Helvetica Neue";
+      font-family: 'Helvetica Neue';
       font-weight: 400;
       font-size: 15px;
       line-height: 24px;
@@ -30,7 +33,7 @@ export const Card = styled.div`
       padding: 0 10px;
     }
     h4 {
-      font-family: "Helvetica Neue";
+      font-family: 'Helvetica Neue';
       font-weight: 200;
       font-size: 15px;
       line-height: 24px;
@@ -62,7 +65,7 @@ export const Card = styled.div`
     margin-bottom: 20px;
 
     h2 {
-      font-family: "Helvetica Neue";
+      font-family: 'Helvetica Neue';
       font-style: normal;
       font-weight: 400;
       font-size: 15px;

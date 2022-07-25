@@ -1,7 +1,7 @@
-import React from "react";
-import { WelcomeHero, SearchHero } from "./Hero.styled";
-import { default as miniHero } from "../../../assets/images/main-image.png";
-import { default as search } from "../../../assets/images/search-icon.svg";
+import React from 'react';
+import { WelcomeHero, SearchHero } from './Hero.styled';
+import { default as miniHero } from '../../../assets/images/mobile-main-photo.png';
+import { default as search } from '../../../assets/images/search-icon.svg';
 
 const Hero = () => {
   return (
